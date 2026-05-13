@@ -15,6 +15,10 @@ jobs:
     name: ${{ github.event_name }}/${{ github.event.action }}
     runs-on: ubuntu-latest
     steps:
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24.x
       - uses: actions/checkout@v4
       - uses: ionic-team/bot@main
         with:
